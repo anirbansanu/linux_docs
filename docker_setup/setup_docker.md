@@ -1,9 +1,9 @@
 Here's the provided text converted into Markdown format:
 
-```markdown
+
 # How to Install Docker on Linux Mint 21 Step-by-Step
 
-**Published on: November 1, 2023 by Pradeep Kumar**
+**Published on: June 25, 2024 by Anirban Mukherjee**
 
 In this blog post, we will show you how to install Docker on a Linux Mint 21 system step-by-step.
 
