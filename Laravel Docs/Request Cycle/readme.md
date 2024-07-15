@@ -51,3 +51,53 @@ graph TD
         AH --> AI[Send Response to Browser]
     end
 ```
+
+
+
+## One More structure
+
+
+```mermaid
+graph TD
+    A[Request Lifecycle]
+    A --> B[Introduction]
+    A --> C[Lifecycle Overview]
+    
+    subgraph Lifecycle Overview
+        C --> D[First Steps]
+        D --> E[Load index.php]
+        E --> F[Load Composer Autoloader]
+        F --> G[Retrieve Application Instance]
+        
+        G --> H[Request Handling]
+        H --> I[HTTP / Console Kernels]
+        I --> J[HTTP Kernel Bootstrappers]
+        J --> K[Middleware Stack]
+        K --> L[Return Response]
+    end
+    
+    subgraph Service Providers
+        G --> M[Load Service Providers]
+        M --> N[Instantiate Providers]
+        N --> O[Register Providers]
+        O --> P[Boot Providers]
+    end
+    
+    subgraph Routing
+        G --> Q[Router Dispatch Request]
+        Q --> R[Route to Controller / Route]
+        R --> S[Run Middleware]
+        S --> T[Execute Controller / Route]
+        T --> U[Return Response]
+    end
+    
+    subgraph Finishing Up
+        U --> V[Travel Back through Middleware]
+        V --> W[Modify / Examine Response]
+        W --> X[Send Response to Browser]
+    end
+    
+    A --> Y[Focus on Service Providers]
+    Y --> Z[Service Providers Bootstrapping]
+    Z --> AA[User-defined Service Providers in app/Providers]
+```
