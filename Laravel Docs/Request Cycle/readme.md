@@ -1,5 +1,22 @@
 ```mermaid
 graph TD
+    A[Client Request] --> B[Entry Point - public index.php]
+    B --> C[HTTP Kernel - app Http Kernel.php]
+    C --> D[Service Providers - Load service providers]
+    D --> E[Middleware Incoming - Verify authentication, logging, etc.]
+    E --> F[Route Service Provider - app Providers RouteServiceProvider.php]
+    F --> G[Routing - Match the request to a route]
+    G --> H[Controller Action - Invoke controller method or action]
+    H --> I[Request Validation - Validate incoming request data]
+    I --> J[Model and Database Interaction - Interact with models and database]
+    J --> K[Response Preparation - Prepare response view, JSON, etc.]
+    K --> L[Middleware Outgoing - Modify response, perform logging, etc.]
+    L --> M[HTTP Kernel Termination - Send response back to client]
+    M --> N[Client Response]
+```
+
+```mermaid
+graph TD
     A[Request Lifecycle] --> B[Introduction]
     B --> C[Lifecycle Overview]
     C --> D[First Steps]
